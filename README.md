@@ -235,3 +235,19 @@ ansible-playbook -i inventory/hosts playbook.yml --limit "webservers:&databases"
 ```
 ### Summary:
 Ansible Inventory is a critical component that defines the hosts and groups of hosts Ansible will manage. It can be static or dynamic, with support for cloud environments via plugins. Whether managing a handful of servers or large-scale dynamic infrastructure, understanding and organizing your inventory efficiently helps streamline your Ansible workflows and simplifies host management. 
+
+# Q. What Is Ansible Ad-Hoc Commands?
+
+Ansible **ad-hoc commands** are simple, one-time, immediate tasks that can be run without writing a playbook. They are useful for quick operations like managing packages, restarting services, or checking system status on multiple hosts. Ad-hoc commands use the same modules that Ansible playbooks do and are executed directly from the command line.
+
+### Example:
+```bash
+ansible all -m ping
+```
+This command pings all the hosts in the inventory to check if they're reachable.
+Another example to install a package:
+```bash
+ansible all -m apt -a "name=nginx state=present"
+```
+Ad-hoc commands are great for quick tasks without the overhead of creating a full playbook.
+
