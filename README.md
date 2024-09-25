@@ -251,3 +251,13 @@ ansible all -m apt -a "name=nginx state=present"
 ```
 Ad-hoc commands are great for quick tasks without the overhead of creating a full playbook.
 
+# Q. What is an Ansible Playbook?
+An Ansible Playbook is a structured, YAML-based file that defines a series of tasks for automating configuration management, application deployment, and orchestration. It is the core way to automate tasks in Ansible and allows users to define complex workflows in a simple, readable format.
+Unlike ad-hoc commands, playbooks can handle a wide variety of scenarios, manage multiple systems at once, and include conditionals, loops, and error handling.
+
+### Key Components of an Ansible Playbook.
+1. **Play:**
+- A play is the primary building block in a playbook. It defines which hosts to target and what tasks to perform. A playbook can have multiple plays, with each targeting different groups of hosts.
+- Each play has:
+   - **Hosts**: The systems on which tasks are executed.
+
